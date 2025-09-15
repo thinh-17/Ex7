@@ -25,23 +25,20 @@
       <form action="cart" method="post">
         <input type="hidden" name="productCode" value="${item.product.code}">
         <input type=text name="quantity" value="${item.quantity}" id="quantity">
-        <input type="submit" value="Update">
+        <input type="submit" name="update" value="Update">
       </form>
     </td>
     <td>${item.product.description}</td>
     <td>${item.product.priceCurrencyFormat}</td>
     <td>${item.totalCurrencyFormat}</td>
     <td>
-      <a href="cart?productCode=${item.product.code}&amp;quantity=0">Remove Item</a>
-      <!--
       <form action="" method="post">
         <input type="hidden" name="productCode" 
                value="${item.product.code}">
         <input type="hidden" name="quantity" 
                value="0">
-        <input type="submit" value="Remove Item">
+        <input type="submit" value="Remove Item" class="remove-btn">
       </form>
-      -->
     </td>
   </tr>
 </c:forEach>
@@ -57,6 +54,9 @@
 
 <form action="checkout.jsp" method="post">
   <input type="hidden" name="action" value="checkout">
+  <input type="hidden" value="${item.product.description}">
+  <input type="hidden" value="${item.quantity}">
+  <input type="hidden" value="${item.totalCurrencyFormat}">
   <input type="submit" value="Checkout">
 </form>
 

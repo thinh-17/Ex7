@@ -4,18 +4,30 @@ body {
     font-size: 85%;
     margin-left: 2em;
     margin-right: 2em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 h1 {     
     font-size: 140%;
-    color: teal;
-    margin-bottom: .5em;    
+    color: darkslategrey;
+    margin-bottom: .5em;
+    background-color: aliceblue;
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
 }
 br {
     clear: both;
 }
 
 #quantity {
-    width: 2em;
+    text-align: center;
+    width: 3em;
+    border-radius: 10px;
 }
 
 /* The styles for the tables */
@@ -23,12 +35,36 @@ table {
     border: 1px solid black;
     border-collapse: collapse;
     width: 50em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 10px;
 }
 th, td {
     border: 1px solid black;
-    text-align: left;
-    padding: .5em;
+    text-align: center;
+    padding: 1.5em;
 }
+
+td a {
+    text-decoration: none;
+    color: red;
+}
+
 .right {
-    text-align: right;
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color: mediumseagreen;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 5px;
+    color: whitesmoke;
+}
+
+.remove-btn {
+    background-color: red !important;
 }

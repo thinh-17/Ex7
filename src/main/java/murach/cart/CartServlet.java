@@ -54,15 +54,18 @@ public class CartServlet extends HttpServlet {
             String path = sc.getRealPath("/WEB-INF/products.txt");
             Product product = ProductIO.getProduct(productCode, path);
 
+            String update = request.getParameter("update");
             LineItem lineItem = new LineItem();
             lineItem.setProduct(product);
             lineItem.setQuantity(quantity);
-            if (quantity > 0) {
+
+            if ("Update".equals(update)) {
+                cart.updateItem(lineItem);
+            } else if (quantity > 0) {
                 cart.addItem(lineItem);
             } else if (quantity == 0) {
                 cart.removeItem(lineItem);
             }
-
             session.setAttribute("cart", cart);
             url = "/cart.jsp";
         }
